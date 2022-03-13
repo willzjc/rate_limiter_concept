@@ -2,7 +2,7 @@ import datetime
 import time
 
 
-class RateLimiter:
+class RateLimiterTokenBucket:
 
     last_refill_timestamp: datetime.datetime
 
@@ -41,7 +41,7 @@ class RateLimiter:
 
 
 def main():
-    rate_limiter = RateLimiter(6, 3)
+    rate_limiter = RateLimiterTokenBucket(6, 3)
     count = 1000
     while count > 0:
         time.sleep(0.2)
